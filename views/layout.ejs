@@ -8,20 +8,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <h1>🐱 Адвокат Геральт</h1>
-                <span>із Голего</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/">Головна</a></li>
-                <li><a href="/cases">Справи</a></li>
-                <li><a href="/law">Котине право</a></li>
-                <li><a href="https://www.instagram.com/geralt_from_golego" target="_blank">Instagram</a></li>
+  <header class="header">
+    <nav class="nav">
+        <div class="nav-brand">
+            <h1>🐱 Адвокат Геральт</h1>
+            <span>із Голего</span>
+        </div>
+        
+        <!-- Гамбургер-меню для мобильных -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Десктопное меню -->
+        <ul class="nav-links">
+            <li><a href="/" class="nav-link">Головна</a></li>
+            <li><a href="/cases" class="nav-link">Справи</a></li>
+            <li><a href="/law" class="nav-link">Котине право</a></li>
+            <li><a href="https://www.instagram.com/geralt_from_golego" target="_blank" class="nav-link">Instagram</a></li>
+        </ul>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="menu-close" id="menuClose">✕</button>
+            <ul class="mobile-nav-links">
+                <li><a href="/" class="mobile-nav-link" onclick="closeMenu()">Головна</a></li>
+                <li><a href="/cases" class="mobile-nav-link" onclick="closeMenu()">Справи</a></li>
+                <li><a href="/law" class="mobile-nav-link" onclick="closeMenu()">Котине право</a></li>
+                <li><a href="https://www.instagram.com/geralt_from_golego" target="_blank" class="mobile-nav-link" onclick="closeMenu()">Instagram</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <main class="main">
         <%- body %>

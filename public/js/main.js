@@ -195,3 +195,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     highlightActiveMenu();
 });
+
+// Глобальная функция для закрытия меню
+function closeMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const body = document.body;
+    
+    if (hamburger && mobileMenu) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        body.style.overflow = '';
+    }
+}
