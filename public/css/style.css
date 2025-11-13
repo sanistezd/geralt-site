@@ -1224,3 +1224,237 @@ h3 {
         display: none;
     }
 }
+
+/* ===== СУПЕР-АДАПТИВНІСТЬ ДЛЯ IPHONE & МОБІЛЬНИХ ===== */
+@media (max-width: 428px) {
+    /* iPhone та маленькі пристрої */
+    
+    /* Загальні виправлення */
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-x: hidden;
+    }
+    
+    /* Хедер та навігація */
+    .header {
+        padding: 0.5rem 0;
+    }
+    
+    .nav {
+        padding: 0 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .nav-brand h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.1rem;
+    }
+    
+    .nav-brand span {
+        font-size: 0.8rem;
+    }
+    
+    /* Герой секція */
+    .hero {
+        padding: 2rem 1rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        min-height: auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+    
+    .hero-avatar {
+        height: 300px;
+        border-width: 4px;
+    }
+    
+    /* Кнопки */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Статистика */
+    .stats-section {
+        padding: 3rem 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    /* Сервіси */
+    .services-section {
+        padding: 3rem 1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .service-card i {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Справи */
+    .cases-section {
+        padding: 3rem 1rem;
+    }
+    
+    .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .case-card {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    .case-photo {
+        height: 220px;
+    }
+    
+    .case-image {
+        height: 220px;
+    }
+    
+    .case-content h3 {
+        font-size: 1.2rem;
+        min-height: auto;
+    }
+    
+    .case-content {
+        padding: 1.25rem;
+    }
+    
+    /* Детальна сторінка справи */
+    .case-detail-container {
+        padding: 1rem;
+    }
+    
+    .case-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .case-detail-image-compact {
+        height: 300px;
+        order: -1;
+    }
+    
+    .case-detail-title {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+    
+    .case-detail-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .case-detail-legal-compact {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .case-detail-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Футер */
+    .footer {
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+    
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Додаткові виправлення для дуже маленьких екранів */
+@media (max-width: 320px) {
+    .nav-brand h1 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-detail-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* Виправлення для iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+    
+    .mobile-menu {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Фікс для висоти на iOS */
+.hero {
+    min-height: 80vh;
+    min-height: calc(var(--vh, 1vh) * 80);
+}
+
+/* Оновлення висоти viewport для мобільних */
+@media (max-width: 428px) {
+    :root {
+        --vh: 1vh;
+    }
+}
