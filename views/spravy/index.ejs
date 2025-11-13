@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-lawyer-light font-sans">
+   <!-- Header з гамбургером -->
+<header class="header">
+    <nav class="nav">
+        <div class="nav-brand">
+            <h1>⚖️ Адвокат Геральт</h1>
+            <span>Топовий адвокат з Голего</span>
+        </div>
+        
+        <!-- Гамбургер-меню -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Звичайне меню для десктопу -->
+        <ul class="nav-links">
+            <li><a href="/" class="nav-link active">Головна</a></li>
+            <li><a href="/spravy" class="nav-link">Справи</a></li>
+            <li><a href="/kotyne-pravo" class="nav-link">Котине право</a></li>
+            <!-- Додаємо Instagram в звичайне меню -->
+            <li><a href="https://www.instagram.com/geralt_from_golego" class="nav-link" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="/" class="mobile-nav-link">Головна</a></li>
+            <li><a href="/spravy" class="mobile-nav-link">Справи</a></li>
+            <li><a href="/kotyne-pravo" class="mobile-nav-link">Котине право</a></li>
+            <li><a href="https://www.instagram.com/geralt_from_golego" class="mobile-nav-link" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a></li>
+        </ul>
+        
+        <!-- Додаткові елементи для мобільного меню -->
+        <div style="margin-top: 3rem; text-align: center; color: white;">
+            <p style="opacity: 0.8; margin-bottom: 1rem;">⚡ Швидкий зв'язок:</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="tel:+380-МЯУ-МЯУ-МЯУ" style="color: var(--ukraine-yellow); text-decoration: none;">
+                    <i class="fas fa-phone"></i> Дзвінок
+                </a>
+                <a href="mailto:advokat.geralt@golego.com" style="color: var(--ukraine-yellow); text-decoration: none;">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main class="main">
+        <section class="cases-section">
+            <div class="text-center mb-8">
+                <h1>Адвокатська картотека справ</h1>
+                <p class="hero-subtitle">Усі справи адвоката Геральта - від простих консультацій до складних адвокатських захистів</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-section" style="max-width: 1200px; margin: 0 auto 3rem; padding: 0 2rem;">
+                <div class="filters-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; background: white; padding: 1.5rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--lawyer-dark);">Фільтр за тегами:</label>
+                        <select onchange="window.location.href=this.value ? '/spravy?tag='+this.value : '/spravy'" style="width: 100%; padding: 0.75rem; border: 2px solid var(--gray-200); border-radius: 8px; background: white;">
+                            <option value="">Всі теги</option>
+                            <option value="адвокатський захист" <%= filters.tag === 'адвокатський захист' ? 'selected' : '' %>>Адвокатський захист</option>
+                            <option value="харчування" <%= filters.tag === 'харчування' ? 'selected' : '' %>>Харчування</option>
+                            <option value="відпочинок" <%= filters.tag === 'відпочинок' ? 'selected' : '' %>>Відпочинок</option>
+                            <option value="топова справа" <%= filters.tag === 'топова справа' ? 'selected' : '' %>>Топові справи</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--lawyer-dark);">Статус справи:</label>
+                        <select onchange="window.location.href=this.value ? '/spravy?status='+this.value : '/spravy'" style="width: 100%; padding: 0.75rem; border: 2px solid var(--gray-200); border-radius: 8px; background: white;">
+                            <option value="">Всі статуси</option>
+                            <option value="виграна" <%= filters.status === 'виграна' ? 'selected' : '' %>>Виграні справи</option>
+                            <option value="розглядається" <%= filters.status === 'розглядається' ? 'selected' : '' %>>В розгляді</option>
+                            <option value="закрита" <%= filters.status === 'закрита' ? 'selected' : '' %>>Закриті справи</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; align-items: end;">
+                        <a href="/spravy" class="btn btn-outline" style="width: 100%;">
+                            <i class="fas fa-refresh"></i> Скинути фільтри
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cases Grid -->
+            <% if (cases && cases.length > 0) { %>
+                <div class="cases-grid">
+                    <% cases.forEach(caseItem => { %>
+                    <div class="case-card fade-in-up">
+                        <div class="case-image">
+                            <img src="<%= caseItem.imageUrl %>" alt="<%= caseItem.title %>" class="case-photo">
+                            <div class="case-image-overlay">
+                                <i class="fas fa-gavel fa-2x"></i>
+                                <div class="case-number-overlay" style="font-size: 1rem; font-weight: 600; margin-top: 0.5rem;"><%= caseItem.caseNumber %></div>
+                            </div>
+                        </div>
+                        <div class="case-content">
+                            <span class="case-number"><%= caseItem.caseNumber %></span>
+                            <h3><%= caseItem.title %></h3>
+                            <p class="case-article"><%= caseItem.article %></p>
+                            <p class="case-verdict"><strong>Рішення:</strong> <%= caseItem.verdict %></p>
+                            
+                            <div class="case-tags">
+                                <span class="case-tag <%= caseItem.priority %>">
+                                    <i class="fas fa-flag"></i> <%= caseItem.priority %>
+                                </span>
+                                <span class="case-tag <%= caseItem.status === 'виграна' ? 'won' : '' %>">
+                                    <i class="fas fa-<%= caseItem.status === 'виграна' ? 'trophy' : 'clock' %>"></i> 
+                                    <%= caseItem.status %>
+                                </span>
+                                <% caseItem.tags.slice(0, 2).forEach(tag => { %>
+                                <span class="case-tag"><%= tag %></span>
+                                <% }); %>
+                            </div>
+
+                            <div class="case-meta" style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0; font-size: 0.9rem; color: var(--gray-600);">
+                                <span><i class="fas fa-eye"></i> <%= caseItem.views %> переглядів</span>
+                                <span><i class="fas fa-calendar"></i> <%= new Date(caseItem.createdAt).toLocaleDateString('uk-UA') %></span>
+                            </div>
+                            
+                            <a href="/spravy/<%= caseItem._id %>" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: auto;">
+                                <i class="fas fa-search"></i> Детальніше
+                            </a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <div class="no-cases" style="text-align: center; padding: 4rem 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-folder-open text-6xl" style="color: var(--gray-200); margin-bottom: 1rem;"></i>
+                    <h3 style="color: var(--gray-600);">Справ не знайдено</h3>
+                    <p style="color: var(--gray-600); margin-bottom: 2rem;">Спробуйте змінити параметри фільтрації</p>
+                    <a href="/spravy" class="btn btn-primary">
+                        <i class="fas fa-refresh"></i> Показати всі справи
+                    </a>
+                </div>
+            <% } %>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Адвокатське бюро Геральта. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

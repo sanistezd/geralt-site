@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-lawyer-light font-sans">
+  <!-- Header з гамбургером -->
+<header class="header">
+    <nav class="nav">
+        <div class="nav-brand">
+            <h1>⚖️ Адвокат Геральт</h1>
+            <span>Топовий адвокат з Голего</span>
+        </div>
+        
+        <!-- Гамбургер-меню -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Звичайне меню для десктопу -->
+        <ul class="nav-links">
+            <li><a href="/" class="nav-link active">Головна</a></li>
+            <li><a href="/spravy" class="nav-link">Справи</a></li>
+            <li><a href="/kotyne-pravo" class="nav-link">Котине право</a></li>
+            <!-- Додаємо Instagram в звичайне меню -->
+            <li><a href="https://www.instagram.com/geralt_from_golego" class="nav-link" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="/" class="mobile-nav-link">Головна</a></li>
+            <li><a href="/spravy" class="mobile-nav-link">Справи</a></li>
+            <li><a href="/kotyne-pravo" class="mobile-nav-link">Котине право</a></li>
+            <li><a href="https://www.instagram.com/geralt_from_golego" class="mobile-nav-link" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a></li>
+        </ul>
+        
+        <!-- Додаткові елементи для мобільного меню -->
+        <div style="margin-top: 3rem; text-align: center; color: white;">
+            <p style="opacity: 0.8; margin-bottom: 1rem;">⚡ Швидкий зв'язок:</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="tel:+380-МЯУ-МЯУ-МЯУ" style="color: var(--ukraine-yellow); text-decoration: none;">
+                    <i class="fas fa-phone"></i> Дзвінок
+                </a>
+                <a href="mailto:advokat.geralt@golego.com" style="color: var(--ukraine-yellow); text-decoration: none;">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main class="main">
+        <article class="case-detail-container">
+            <!-- Back Button -->
+            <a href="/spravy" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Назад до картотеки
+            </a>
+
+            <!-- Case Layout - фото зліва, контент справа -->
+            <div class="case-detail-layout">
+                <!-- Photo Column -->
+                <div class="case-detail-image-compact">
+                    <img src="<%= caseItem.imageUrl %>" alt="<%= caseItem.title %>">
+                </div>
+
+                <!-- Content Column -->
+                <div class="case-detail-content">
+                    <!-- Case Header -->
+                    <header class="case-detail-header-compact">
+                        <span class="case-detail-number"><%= caseItem.caseNumber %></span>
+                        <h1 class="case-detail-title"><%= caseItem.title %></h1>
+                        <div class="case-detail-meta">
+                            <span class="case-detail-priority">
+                                <i class="fas fa-flag"></i> <%= caseItem.priority %>
+                            </span>
+                            <span class="case-detail-status">
+                                <i class="fas fa-trophy"></i> <%= caseItem.status %>
+                            </span>
+                            <span class="case-detail-date">
+                                <i class="fas fa-calendar"></i> <%= new Date(caseItem.createdAt).toLocaleDateString('uk-UA') %>
+                            </span>
+                            <span class="case-detail-views">
+                                <i class="fas fa-eye"></i> <%= caseItem.views %> переглядів
+                            </span>
+                        </div>
+                    </header>
+
+                    <!-- Case Description -->
+                    <section class="case-detail-description-compact">
+                        <h2>
+                            <i class="fas fa-file-alt"></i>
+                            Опис справи
+                        </h2>
+                        <p><%= caseItem.description %></p>
+                    </section>
+
+                    <!-- Full Case Details -->
+                    <section class="case-full-details">
+                        <h2>
+                            <i class="fas fa-search"></i>
+                            Повні деталі справи
+                        </h2>
+                        <div class="case-full-details-content">
+                            <%- caseItem.fullDetails %>
+                        </div>
+                    </section>
+
+                    <!-- Legal Information -->
+                    <div class="case-detail-legal-compact">
+                        <div class="case-detail-article-compact">
+                            <h3>
+                                <i class="fas fa-book-law"></i>
+                                Правове підґрунтя
+                            </h3>
+                            <p><%= caseItem.article %></p>
+                        </div>
+                        
+                        <div class="case-detail-verdict-compact">
+                            <h3>
+                                <i class="fas fa-gavel"></i>
+                                Рішення справи
+                            </h3>
+                            <p><%= caseItem.verdict %></p>
+                        </div>
+                    </div>
+
+                    <!-- Case Details -->
+                    <div class="case-detail-info-compact">
+                        <h3>
+                            <i class="fas fa-info-circle"></i>
+                            Деталі справи
+                        </h3>
+                        <div class="case-detail-info-grid">
+                            <div class="case-detail-item-compact">
+                                <div class="case-detail-label">Складність</div>
+                                <div class="case-detail-value"><%= caseItem.complexity %></div>
+                            </div>
+                            <div class="case-detail-item-compact">
+                                <div class="case-detail-label">Тривалість</div>
+                                <div class="case-detail-value"><%= caseItem.duration %></div>
+                            </div>
+                            <div class="case-detail-item-compact">
+                                <div class="case-detail-label">Успішність</div>
+                                <div class="case-detail-value success"><%= caseItem.successRate %>%</div>
+                            </div>
+                            <div class="case-detail-item-compact">
+                                <div class="case-detail-label">Нагорода</div>
+                                <div class="case-detail-value"><%= caseItem.award %></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="case-detail-tags-compact">
+                        <h3>
+                            <i class="fas fa-tags"></i>
+                            Теги справи
+                        </h3>
+                        <div class="case-detail-tags-container">
+                            <% caseItem.tags.forEach(tag => { %>
+                            <span class="case-detail-tag"><%= tag %></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="case-detail-actions">
+                <a href="<%= caseItem.instagramUrl %>" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-instagram"></i> Переглянути в Instagram
+                </a>
+                <a href="/spravy" class="btn btn-secondary">
+                    <i class="fas fa-folder-open"></i> Всі справи
+                </a>
+            </div>
+
+            <!-- Related Cases -->
+            <% if (relatedCases && relatedCases.length > 0) { %>
+            <section class="related-cases">
+                <h2>Схожі справи</h2>
+                <div class="cases-grid">
+                    <% relatedCases.forEach(relatedCase => { %>
+                    <div class="case-card fade-in-up">
+                        <div class="case-image">
+                            <img src="<%= relatedCase.imageUrl %>" alt="<%= relatedCase.title %>" class="case-photo">
+                            <div class="case-image-overlay">
+                                <i class="fas fa-gavel"></i>
+                                <div class="case-number-overlay"><%= relatedCase.caseNumber %></div>
+                            </div>
+                        </div>
+                        <div class="case-content">
+                            <span class="case-number"><%= relatedCase.caseNumber %></span>
+                            <h3><%= relatedCase.title %></h3>
+                            <p class="case-article"><%= relatedCase.article %></p>
+                            <p class="case-verdict"><%= relatedCase.verdict %></p>
+                            <div class="case-tags">
+                                <span class="case-tag <%= relatedCase.priority %>">
+                                    <i class="fas fa-flag"></i> <%= relatedCase.priority %>
+                                </span>
+                                <span class="case-tag won">
+                                    <i class="fas fa-trophy"></i> <%= relatedCase.status %>
+                                </span>
+                            </div>
+                            <a href="/spravy/<%= relatedCase._id %>" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: 1rem;">
+                                <i class="fas fa-eye"></i> Деталі справи
+                            </a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </section>
+            <% } %>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Адвокатське бюро Геральта. Усі права захищені.</p>
+            <p>Сайт створено з любов'ю до права та котів</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Адвокат Геральт - топовий адвокат з Голего. Спеціалізація: захист прав, адвокатський супровід, юридичні консультації.">
+</head>
+<body class="bg-lawyer-light font-sans">
+    <!-- Header -->
+    <!-- Header з гамбургером -->
+<header class="header">
+    <nav class="nav">
+        <div class="nav-brand">
+            <h1>⚖️ Адвокат Геральт</h1>
+            <span>Топовий адвокат з Голего</span>
+        </div>
+        
+        <!-- Гамбургер-меню -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Звичайне меню для десктопу -->
+        <ul class="nav-links">
+            <li><a href="/" class="nav-link active">Головна</a></li>
+            <li><a href="/spravy" class="nav-link">Справи</a></li>
+            <li><a href="/kotyne-pravo" class="nav-link">Котине право</a></li>
+            <!-- Додаємо Instagram в звичайне меню -->
+            <li><a href="https://www.instagram.com/geralt_from_golego" class="nav-link" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="/" class="mobile-nav-link">Головна</a></li>
+            <li><a href="/spravy" class="mobile-nav-link">Справи</a></li>
+            <li><a href="/kotyne-pravo" class="mobile-nav-link">Котине право</a></li>
+            <li><a href="https://www.instagram.com/geralt_from_golego" class="mobile-nav-link" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a></li>
+        </ul>
+        
+        <!-- Додаткові елементи для мобільного меню -->
+        <div style="margin-top: 3rem; text-align: center; color: white;">
+            <p style="opacity: 0.8; margin-bottom: 1rem;">⚡ Швидкий зв'язок:</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="tel:+380-МЯУ-МЯУ-МЯУ" style="color: var(--ukraine-yellow); text-decoration: none;">
+                    <i class="fas fa-phone"></i> Дзвінок
+                </a>
+                <a href="mailto:advokat.geralt@golego.com" style="color: var(--ukraine-yellow); text-decoration: none;">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in-up">
+        <div class="hero-content">
+            <h1>Адвокат Геральт</h1>
+            <p class="hero-subtitle">Топовий адвокат з понад 3-річним досвідом успішного захисту прав. Спеціалізація: складні адвокатські справи, захист прав на харчування, відпочинок та комфорт.</p>
+            <div class="hero-buttons">
+                <a href="/spravy" class="btn btn-primary">
+                    <i class="fas fa-gavel"></i> Переглянути справи
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-calendar-check"></i> Записатись на консультацію
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/images/avatar.jpg" alt="Адвокат Геральт" class="hero-avatar">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number"><%= stats.totalCases %></div>
+                <div class="stat-label">Успішних справ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><%= stats.successRate %>%</div>
+                <div class="stat-label">Успішність</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><%= stats.experience %></div>
+                <div class="stat-label">Досвіду роботи</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><%= stats.happyClients %>%</div>
+                <div class="stat-label">Задоволених клієнтів</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <h2>Адвокатські послуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Адвокатський захист</h3>
+                <p>Повний адвокатський супровід у складних справах, захист прав та інтересів клієнтів</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-balance-scale"></i>
+                <h3>Юридичні консультації</h3>
+                <p>Професійні консультації з різних галузей права, аналіз правових ситуацій</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-file-contract"></i>
+                <h3>Складання документів</h3>
+                <p>Адвокатське складання позовних заяв, скарг, договорів та інших документів</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ТОПОВІ СПРАВИ - КВАДРАТНІ ФОТО -->
+    <% if (featuredCases && featuredCases.length > 0) { %>
+    <section class="cases-section">
+        <h2>Топові справи</h2>
+        <div class="cases-grid">
+            <% featuredCases.forEach(caseItem => { %>
+            <div class="case-card fade-in-up">
+                <div class="case-image">
+                    <img src="<%= caseItem.imageUrl %>" alt="<%= caseItem.title %>" class="case-photo">
+                    <div class="case-image-overlay">
+                        <i class="fas fa-gavel fa-2x"></i>
+                        <div class="case-number-overlay" style="font-size: 1rem; font-weight: 600; margin-top: 0.5rem;"><%= caseItem.caseNumber %></div>
+                    </div>
+                </div>
+                <div class="case-content">
+                    <span class="case-number"><%= caseItem.caseNumber %></span>
+                    <h3><%= caseItem.title %></h3>
+                    <p class="case-article"><%= caseItem.article %></p>
+                    <p class="case-verdict"><strong>Рішення:</strong> <%= caseItem.verdict %></p>
+                    
+                    <div class="case-tags">
+                        <span class="case-tag <%= caseItem.priority %>">
+                            <i class="fas fa-flag"></i> <%= caseItem.priority %>
+                        </span>
+                        <span class="case-tag won">
+                            <i class="fas fa-trophy"></i> <%= caseItem.status %>
+                        </span>
+                        <% caseItem.tags.slice(0, 2).forEach(tag => { %>
+                        <span class="case-tag"><%= tag %></span>
+                        <% }); %>
+                    </div>
+                    
+                    <a href="/spravy/<%= caseItem._id %>" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: auto;">
+                        <i class="fas fa-eye"></i> Деталі справи
+                    </a>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        
+        <div class="text-center mt-6">
+            <a href="/spravy" class="btn btn-primary">
+                <i class="fas fa-folder-open"></i> Вся картотека справ
+            </a>
+        </div>
+    </section>
+    <% } %>
+
+    <!-- Contact Section -->
+    <section id="contact" class="services-section" style="background: var(--gray-100); border-radius: 20px; margin: 2rem auto; max-width: 1200px;">
+        <h2>Записатись на консультацію</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-phone"></i>
+                <h3>Телефон</h3>
+                <p>+380-МЯУ-МЯУ-МЯУ</p>
+                <p>Пн-Пт: 9:00 - 18:00</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>advokat.geralt@golego.com</p>
+                <p>Відповідаємо протягом 24 годин</p>
+            </div>
+            <div class="service-card">
+                <i class="fab fa-instagram"></i>
+                <h3>Instagram</h3>
+                <p>@geralt_from_golego</p>
+                <p>Прямий зв'язок через DM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Адвокатське бюро Геральта. Усі права захищені.</p>
+            <p>Сайт створено з любов'ю до права та котів</p>
+            <p style="margin-top: 1rem; opacity: 0.6;">
+                <i class="fas fa-map-marker-alt"></i> Голего, Вулиця Адвокатська, 1
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

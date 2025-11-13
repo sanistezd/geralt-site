@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>🐱 Адвокат Геральт</h1>
+                <span>із Голего</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Головна</a></li>
+                <li><a href="/cases">Справи</a></li>
+                <li><a href="/law">Котине право</a></li>
+                <li><a href="https://www.instagram.com/geralt_from_golego" target="_blank">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <%- body %>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Адвокатська контора кота Геральта. Усі права захищені.</p>
+            <p>Сайт створено з любов'ю до права та котів</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

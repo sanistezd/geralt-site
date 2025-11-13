@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-lawyer-light font-sans">
+   <!-- Header з гамбургером -->
+<header class="header">
+    <nav class="nav">
+        <div class="nav-brand">
+            <h1>⚖️ Адвокат Геральт</h1>
+            <span>Топовий адвокат з Голего</span>
+        </div>
+        
+        <!-- Гамбургер-меню -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Звичайне меню для десктопу -->
+        <ul class="nav-links">
+            <li><a href="/" class="nav-link active">Головна</a></li>
+            <li><a href="/spravy" class="nav-link">Справи</a></li>
+            <li><a href="/kotyne-pravo" class="nav-link">Котине право</a></li>
+            <!-- Додаємо Instagram в звичайне меню -->
+            <li><a href="https://www.instagram.com/geralt_from_golego" class="nav-link" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="/" class="mobile-nav-link">Головна</a></li>
+            <li><a href="/spravy" class="mobile-nav-link">Справи</a></li>
+            <li><a href="/kotyne-pravo" class="mobile-nav-link">Котине право</a></li>
+            <li><a href="https://www.instagram.com/geralt_from_golego" class="mobile-nav-link" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a></li>
+        </ul>
+        
+        <!-- Додаткові елементи для мобільного меню -->
+        <div style="margin-top: 3rem; text-align: center; color: white;">
+            <p style="opacity: 0.8; margin-bottom: 1rem;">⚡ Швидкий зв'язок:</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="tel:+380000000000" style="color: var(--ukraine-yellow); text-decoration: none;">
+                    <i class="fas fa-phone"></i> Дзвінок
+                </a>
+                <a href="mailto:advokat.geralt@golego.com" style="color: var(--ukraine-yellow); text-decoration: none;">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+    <main class="main">
+        <section class="pravo-header" style="max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; text-align: center;">
+            <h1>⚖️ Котине право</h1>
+            <p style="font-size: 1.3rem; color: var(--gray-600); margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Правові концепції та адвокатські практики, проілюстровані через досвід топового адвоката Геральта
+            </p>
+        </section>
+
+        <section class="pravo-content" style="max-width: 1000px; margin: 0 auto; padding: 0 2rem 4rem;">
+            <div class="pravo-articles" style="display: grid; gap: 2rem;">
+                <!-- Article 1 -->
+                <article class="pravo-article" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid var(--ukraine-blue);">
+                    <div style="display: flex; align-items: start; gap: 1.5rem;">
+                        <div style="background: var(--ukraine-blue); color: white; padding: 1rem; border-radius: 12px; min-width: 60px; text-align: center;">
+                            <i class="fas fa-home" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h2 style="color: var(--lawyer-dark); margin-bottom: 1rem; font-size: 1.5rem;">
+                                Право власності на найм'якше крісло
+                            </h2>
+                            <p style="line-height: 1.7; color: var(--gray-600); margin-bottom: 1rem;">
+                                Коти, як і адвокат Геральт, чудово розуміють концепцію приватної власності. Особливо це стосується найзручніших місць для відпочинку. Це право є невідчужуваним та безумовним, що підтверджено численними адвокатськими справами.
+                            </p>
+                            <div style="background: var(--gray-100); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--ukraine-yellow);">
+                                <strong>Адвокатська практика:</strong> У справі АДВ-ГЕРАЛЬТ-2024-015 було встановлено, що право власності на крісло поширюється на 100% поверхні, незалежно від фактичного розміру кота.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="pravo-article" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid var(--ukraine-yellow);">
+                    <div style="display: flex; align-items: start; gap: 1.5rem;">
+                        <div style="background: var(--ukraine-yellow); color: var(--lawyer-dark); padding: 1rem; border-radius: 12px; min-width: 60px; text-align: center;">
+                            <i class="fas fa-moon" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h2 style="color: var(--lawyer-dark); margin-bottom: 1rem; font-size: 1.5rem;">
+                                Конституційне право на нічний пробіг
+                            </h2>
+                            <p style="line-height: 1.7; color: var(--gray-600); margin-bottom: 1rem;">
+                                Жоден закон не може обмежити природне право кота на нічні активності та гучне заявляння про свої права у найменш підходящий для відпочинку час. Це право захищено Конституцією Котів та підтверджено адвокатською практикою.
+                            </p>
+                            <div style="background: var(--gray-100); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--ukraine-blue);">
+                                <strong>Прецедент:</strong> Справа АДВ-ГЕРАЛЬТ-2024-008 встановила, що нічні пробіги є невід'ємною частиною здорого способу життя та не можуть бути обмежені.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="pravo-article" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid var(--accent-green);">
+                    <div style="display: flex; align-items: start; gap: 1.5rem;">
+                        <div style="background: var(--accent-green); color: white; padding: 1rem; border-radius: 12px; min-width: 60px; text-align: center;">
+                            <i class="fas fa-utensils" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h2 style="color: var(--lawyer-dark); margin-bottom: 1rem; font-size: 1.5rem;">
+                                Закон про захист прав споживачів
+                            </h2>
+                            <p style="line-height: 1.7; color: var(--gray-600); margin-bottom: 1rem;">
+                                Коти - найвимогливіші споживачі. Вони знають свої права на якісний корм, свіжу воду та своєчасне обслуговування. Будь-яке невідповідне харчування карається за законом, що підтверджено численними адвокатськими перемогами.
+                            </p>
+                            <div style="background: var(--gray-100); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
+                                <strong>Юридична позиція:</strong> Адвокат Геральт довів, що запізнення сніданку більше ніж на 5 хвилин є грубим порушенням прав споживача.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="pravo-article" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-left: 5px solid var(--accent-purple);">
+                    <div style="display: flex; align-items: start; gap: 1.5rem;">
+                        <div style="background: var(--accent-purple); color: white; padding: 1rem; border-radius: 12px; min-width: 60px; text-align: center;">
+                            <i class="fas fa-universal-access" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h2 style="color: var(--lawyer-dark); margin-bottom: 1rem; font-size: 1.5rem;">
+                                Право на безперешкодний доступ до вікон
+                            </h2>
+                            <p style="line-height: 1.7; color: var(--gray-600); margin-bottom: 1rem;">
+                                Конституційне право на огляд території та моніторинг безпеки є одним з фундаментальних прав кожного кота. Обмеження доступу до вікон розглядається як серйозне правопорушення.
+                            </p>
+                            <div style="background: var(--gray-100); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-purple);">
+                                <strong>Адвокатська стратегія:</strong> У справі АДВ-ГЕРАЛЬТ-2024-012 було встановлено прецедент про те, що доступ до вікна має бути цілодобовим.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, var(--ukraine-blue) 0%, var(--lawyer-dark) 100%); color: white; border-radius: 20px;">
+                <h2 style="color: white; margin-bottom: 1rem;">Потрібна адвокатська допомога?</h2>
+                <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">
+                    Адвокат Геральт готовий взяти навіть найскладнішу справу з захисту ваших прав!
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/spravy" class="btn" style="background: var(--ukraine-yellow); color: var(--lawyer-dark);">
+                        <i class="fas fa-gavel"></i> Переглянути справи
+                    </a>
+                    <a href="https://www.instagram.com/geralt_from_golego" target="_blank" class="btn" style="background: white; color: var(--lawyer-dark);">
+                        <i class="fab fa-instagram"></i> Написати в Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Адвокатське бюро Геральта. Усі права захищені.</p>
+            <p>Сайт створено з любов'ю до права та котів</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

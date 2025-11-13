@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-lawyer-light font-sans">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>⚖️ Адвокат Геральт</h1>
+                <span>Топовий адвокат з Голего</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Головна</a></li>
+                <li><a href="/spravy" class="nav-link">Справи</a></li>
+                <li><a href="/kotyne-pravo" class="nav-link">Котине право</a></li>
+                <li><a href="https://www.instagram.com/geralt_from_golego" class="nav-link" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="error-page" style="max-width: 600px; margin: 0 auto; padding: 6rem 2rem; text-align: center;">
+            <div class="error-content">
+                <div style="font-size: 6rem; color: var(--accent-red); margin-bottom: 2rem;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h1 style="font-size: 2.5rem; color: var(--lawyer-dark); margin-bottom: 1.5rem;">
+                    Сталася помилка
+                </h1>
+                <p style="font-size: 1.2rem; color: var(--gray-600); margin-bottom: 3rem; line-height: 1.6;">
+                    <%= error %>
+                </p>
+                <div class="error-actions" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/" class="btn btn-primary">
+                        <i class="fas fa-home"></i> На головну
+                    </a>
+                    <a href="/spravy" class="btn btn-outline">
+                        <i class="fas fa-gavel"></i> Справи
+                    </a>
+                    <button onclick="location.reload()" class="btn btn-secondary">
+                        <i class="fas fa-refresh"></i> Спробувати знову
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Адвокатське бюро Геральта. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
