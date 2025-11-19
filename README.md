@@ -10,19 +10,6 @@
 - **Database**: (за потребою) MongoDB
 - **Deployment**: Railway
 
-## 📁 Структура проекту
-geralt-lawyer-site/
-├── public/ # Статичні файли
-│ ├── css/
-│ ├── js/
-│ └── images/
-├── views/ # EJS шаблони
-│ ├── cases/ # Сторінки справ
-│ └── layout.ejs # Основний шаблон
-├── server.js # Головний сервер
-└── package.json # Залежності
-
-text
 
 ## 🎨 Особливості
 
