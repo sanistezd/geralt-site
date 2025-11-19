@@ -1,72 +1,33 @@
-# 🐱 Адвокат Геральт із Голего
+# 🐱 Advocate Geralt from Golego
 
-Сайт топового адвоката Геральта - професійна юридична практика з котиним шармом.
+Professional website for top advocate Geralt - legal practice with feline charm.
 
-## 🚀 Технології
+## 🚀 Tech Stack
 
 - **Backend**: Node.js + Express
-- **Frontend**: EJS шаблони
-- **Styling**: Pure CSS з Ukrainian палітрою
-- **Database**: (за потребою) MongoDB
+- **Frontend**: EJS templates  
+- **Styling**: Pure CSS with Ukrainian colors
 - **Deployment**: Railway
 
+## 🎨 Features
 
-## 🎨 Особливості
+- 🇺🇦 Ukrainian color palette
+- 📱 Full mobile responsiveness
+- 🍔 Hamburger menu
+- ⚡ Fast loading
+- 🎭 Animations & effects
 
-- 🇺🇦 Українська палітра кольорів
-- 📱 Повна адаптивність (mobile-first)
-- 🍔 Сеньйорський гамбургер-меню
-- ⚡ Швидке завантаження
-- 🎭 Анімації та hover-ефекти
-
-## 🚀 Швидкий старт
+## 🚀 Quick Start
 
 ```bash
-# Встановлення залежностей
 npm install
-
-# Запуск локально
 npm start
-
-# Або з nodemon для розробки
-npm run dev
-🌐 Деплой
-Сайт автоматично деплоїться на Railway при пуши в main гілку.
+🌐 Deployment
+Auto-deploys to Railway on push to main branch.
 
 bash
 git add .
-git commit -m "Оновлення сайту"
+git commit -m "Update"
 git push origin main
-📱 Адаптивність
-💻 Десктоп (1200px+)
-
-📱 Планшет (768px - 1199px)
-
-📱 Мобільні (320px - 767px)
-
-📱 iPhone оптимізація
-
-🛠 Розробка
-Для додавання нових сторінок:
-
-Створи EJS шаблон в views/
-
-Додай маршрут в server.js
-
-Додай стилі в public/css/style.css
-
-📞 Контакти
-📧 Email: (додати при потребі)
-
+📞 Contact
 📸 Instagram: @geralt_from_golego
-
-🐈 Про Геральта
-Топовий адвокат з Голего, спеціалізується на:
-
-Котиному праві
-
-Захисті прав тварин
-
-Юридичних консультаціях
-
-Судових справах
