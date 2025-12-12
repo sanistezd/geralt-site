@@ -8,13 +8,18 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// VERCEL FIX: Встановлюємо абсолютні шляхи
+const viewsPath = path.join(__dirname, 'views');
+const publicPath = path.join(__dirname, 'public');
+
 // Middleware
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
+app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.json({ limit: '10mb' }));
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', viewsPath);
+
+// ... решта коду залишається без змін
 
 // Mock data with 5 cases
 const mockCases = [
