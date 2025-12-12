@@ -73,3 +73,14 @@ if (require.main === module) {
         console.log(`🚀 Сервер запущено на порту ${PORT}`);
     });
 }
+
+// Для Vercel
+export default app;
+
+// Локальный запуск
+if (import.meta.url === `file://${process.argv[1]}`) {
+    app.listen(PORT, () => {
+        console.log(`🚀 Сервер запущено на http://localhost:${PORT}`);
+        console.log(`⚖️  Адвокат Геральт готовий до роботи!`);
+    });
+}
